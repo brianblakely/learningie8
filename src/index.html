@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<!--[if IE 8]>     <html class="ie ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge; chrome=1" />
+
+		<title>Learning IE8</title>
+
+		<meta name="description" content="Listing and Demonstrating the &quot;New&quot; Features in Internet Explorer 8" />
+		<meta name="author" content="Brian Blakely" />
+
+		<meta name="viewport" content="width=device-width" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Learning IE8" />
+		<meta property="og:description" content="Listing and Demonstrating the &quot;New&quot; Features in Internet Explorer 8" />
+		<meta property="og:image" content="http://www.learningie8.com/images/icon_fb.png" />
+		<meta property="og:url" content="http://www.learningie8.com/" />
+		<meta property="og:site_name" content="Learning IE8"/>
+
+		<link rel="canonical" href="http://www.learningie8.com/" />
+		<link rel="shortlink" href="https://bitly.com/O0CQSr" />
+
+		<link rel="shortcut icon" href="images/icon_favi.png" type="image/x-icon" />
+		<link rel="apple-touch-icon-precomposed" href="images/icon_mobile_precomposed.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icon_ipad_precomposed.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icon_mobile_ret_precomposed.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icon_ipad_ret_precomposed.png" />
+
+		<script>
+			if(window.innerWidth) {
+				function remCalibrate() {
+					document.documentElement.style.fontSize = window.innerWidth/100 + 'px';
+				}
+				remCalibrate();
+				window.addEventListener('resize', remCalibrate, false);
+			}
+		</script>
+		<link rel="stylesheet" href="css/style.css" />
+
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-33397891-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	</head>
+	<body>
+		<header>
+			<hgroup>
+				<h1>
+					Learning IE8
+				</h1>
+				<h2>
+					Listing and Demonstrating the "New" Features in Internet Explorer 8
+				</h2>
+			</hgroup>
+			<p>
+				Within the next 12 months, many Web developers will be dropping <abbr title="Internet Explorer 7">IE7</abbr>.  Many Web developers have also been ignoring some modern browser capabilities because, well, they weren't supported by their baseline browser.  This site aims to list and demo the platform features that were introduced in IE8 years ago, so you can make the most of today's new baseline.
+			</p>
+			<details class="closed">
+				<summary class="closed">
+					About
+				</summary>
+				<h3>
+					By
+				</h3>
+				<a id="author" href="https://twitter.com/brianblakely">
+					<img src="http://i.imgur.com/3rSQ4PF.jpg" alt="">
+					Brian Blakely (follow on Twitter)
+				</a>
+				<a class="vhidden" href="https://plus.google.com/113217906800610883343?rel=author">
+					Add on Google Plus
+				</a>
+				<h3>
+					Sources
+				</h3>
+				<ul>
+					<li>
+						<a href="http://msdn.microsoft.com/en-us/library/cc288472(v=vs.85).aspx">
+							http://msdn.microsoft.com/en-us/library/cc288472(v=vs.85).aspx
+						</a>
+					</li>
+					<li>
+						<a href="http://msdn.microsoft.com/en-us/library/cc351024(VS.85).aspx">
+							http://msdn.microsoft.com/en-us/library/cc351024(VS.85).aspx
+						</a>
+					</li>
+					<li>
+						<a href="http://caniuse.com/">
+							http://caniuse.com/
+						</a>
+					</li>
+					<li>
+						<a href="http://coding.smashingmagazine.com/2009/10/14/css-differences-in-internet-explorer-6-7-and-8/">
+							http://coding.smashingmagazine.com/2009/10/14/css-differences-in-internet-explorer-6-7-and-8/
+						</a>
+					</li>
+					<li>
+						<a href="http://ejohn.org/blog/javascript-in-internet-explorer-8/">
+							http://ejohn.org/blog/javascript-in-internet-explorer-8/
+						</a>
+					</li>
+					<li>
+						<a href="http://www.quirksmode.org/css/lists.html">
+							http://www.quirksmode.org/css/lists.html
+						</a>
+					</li>
+				</ul>
+				<h3>
+					Test Suites and Tools
+				</h3>
+				<ul>
+					<li>
+						<a href="http://haz.io/">
+							http://haz.io/
+						</a>
+					</li>
+					<li>
+						<a href="http://acid3.acidtests.org/">
+							http://acid3.acidtests.org/
+						</a>
+					</li>
+					<li>
+						<a href="http://www.browserstack.com/">
+							http://www.browserstack.com/
+						</a>
+					</li>
+				</ul>
+				<h3>
+					Browser Support
+				</h3>
+				<ul>
+					<li>
+						Various WebKits
+					</li>
+					<li>
+						Firefox (Recent)
+					</li>
+					<li>
+						IE8 & 9
+					</li>
+				</ul>
+			</details>
+		</header>
+		<section>
+			<h2>
+				Filter Features By Impact
+			</h2>
+			<menu class="clear" type="toolbar">
+				<li>
+					<input id="cat-new" class="vhidden" name="cat-select" type="radio" />
+					<label for="cat-new">
+						<em>
+							New
+						</em>
+						Features for Apps
+					</label>
+				</li>
+				<li>
+					<input id="cat-better" class="vhidden" name="cat-select" type="radio" />
+					<label for="cat-better">
+						<em>
+							Better
+						</em>
+						Features for You
+					</label>
+				</li>
+				<li>
+					<input id="cat-nice" class="vhidden" name="cat-select" type="radio" />
+					<label for="cat-nice">
+						<em>
+							Nice
+						</em>
+						Things to Have
+					</label>
+				</li>
+				<li>
+					<input id="cat-ok" class="vhidden" name="cat-select" type="radio" />
+					<label for="cat-ok">
+						<em>
+							OK
+						</em>
+						Got it.
+					</label>
+				</li>
+			</menu>
+			<h2 id="features-html">
+				HTML
+			</h2>
+			<article class="cat-new">
+				<h3>
+					WAI-ARIA Attributes
+				</h3>
+				<a href="http://dev.opera.com/articles/view/introduction-to-wai-aria/" target="_blank">
+					More Info
+				</a>
+				<p>
+					HTML attributes that help make dynamic content accessible.  Now that IE8 understands these, developers can control how it talks to JAWS or other screen readers.
+				</p>
+			</article>
+			<article class="cat-ok">
+				<h3>
+					<code>&lt;img&gt;</code> <code>alt</code> No Longer Appears as a Tooltip
+				</h3>
+				<a href="https://developer.mozilla.org/en/HTML/element/img" target="_blank">
+					More Info
+				</a>
+				<p>
+					I didn't even notice that this was a thing, but cool!
+				</p>
+			</article>
+			<h2 id="features-css">
+				CSS
+			</h2>
+			<article class="cat-better">
+				<h3>
+					More <code>display</code> Values
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/display" target="_blank">
+					More Info
+				</a>
+				<p>
+					IE8 finally brought all the CSS2 values for <code>display</code>.  <code>inline-block</code> might actually reduce the amount of <code>float</code>-bloat in your CSS, and the various <code>table</code> values can make vertical centering of arbitrary content a breeze when combined with <code>vertical-align</code>.
+				</p>
+			</article>
+			<article class="cat-better">
+				<h3>
+					<code>box-sizing</code>
+				</h3>
+				<a href="https://developer.mozilla.org/En/CSS/Box-sizing" target="_blank">
+					More Info
+				</a>
+				<p>
+					Oh man.  This will allow you to size and layout elements the way it was always supposed to be, but somehow perverted along the path – until now.  With <code>box-sizing: border-box;</code> you can set the <code>width</code> of your element, and have your border and padding grow inward, instead of expanding outward, as was mandatory in IE7 Standards Mode, requiring (shudder) math.  You can also combine px and % on various box model properties to do some interesting things.
+				</p>
+			</article>
+			<article class="cat-better">
+				<h3>
+					Generated Content
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/content" target="_blank">
+					More Info
+				</a>
+				<p>
+					The popular <code>:before</code> and <code>:after</code> pseudo-elements are parts of this spec. It is intended to make superfluous, decorative HTML elements a thing of the past, and IE8 implements a good portion of it.  Not only that, but it will take out a lot of the handwork involved in numbering elements when an &lt;ol&gt; is not appropriate.  This is an <em>insanely</em> helpful feature.
+				</p>
+				<p>
+					One thing to note: IE's proprietary filter effects don't work on generated content.
+				</p>
+			</article>
+			<article class="cat-better">
+				<h3>
+					<code>:focus</code> Pseudo-Class
+				</h3>
+				<a href="https://developer.mozilla.org/En/CSS/%3Afocus" target="_blank">
+					More Info
+				</a>
+				<p>
+					Undoubtedly, forms are the biggest pain in the butt when it comes to styling.  Anything a browser can throw at us to make this simpler is welcome.  <code>:focus</code> allows you to style a form element or link when it has user focus.  That is, when the user has tabbed-to or clicked it.
+				</p>
+			</article>
+			<article class="cat-better">
+				<h3>
+					<code>outline</code>
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/outline" target="_blank">
+					More Info
+				</a>
+				<p>
+					An outline is kind of like a border that doesn't take up layout.  It kind of floats ethereally around your element.  While <code>box-sizing</code> makes this behavior less useful, it still has a ton of good uses, which I'm sure you'll tease out.
+				</p>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					<code>inherit</code>
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/inherit" target="_blank">
+					More Info
+				</a>
+				<p>
+					This was really janky before IE8.  I think it only worked on <code>color</code> or something, but now you can use it as a value for just about any CSS property.  It's really useful for setting up theming with a very small amount of code.
+				</p>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					More Table Control
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/Getting_Started/Tables" target="_blank">
+					More Info
+				</a>
+				<p>
+					A few new properties to get your motors putting:
+				</p>
+				<ul>
+					<li>
+						<code>border-spacing</code> – Space between cell borders.  While <code>margin</code> does not apply to table cells, this allows for a similar treatment.
+					</li>
+					<li>
+						<code>empty-cells</code> – Hide or display cells without content.
+					</li>
+					<li>
+						<code>caption-side</code> – Render <code>&lt;caption&gt;</code> above or below the <code>&lt;tbody&gt;</code>.
+					</li>
+				</ul>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					More Printing Control
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/Paged_Media" target="_blank">
+					More Info
+				</a>
+				<p>
+					IE8 has 3 new properties for printing. These only affect printed content, and presumably one day all paged content, such as that in Opera's paged media spec.
+				</p>
+				<p>
+					These properties are:
+				</p>
+				<ul>
+					<li>
+						<code>orphans</code> – Minimum number of lines to show before breaking to a new page.
+					</li>
+					<li>
+						<code>widows</code> – Minimum number of lines that must break to a new page.
+					</li>
+					<li>
+						<code>page-break-inside</code> – Controls whether an element should be broken at all across pages.
+					</li>
+				</ul>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					More <code>white-space</code> Values
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/white-space" target="_blank">
+					More Info
+				</a>
+				<p>
+					Two new values:
+				</p>
+				<ul>
+					<li>
+						<code>pre-line</code> – Newline characters will render out just as you typed them.  Otherwise, text will behave normally (multiple spaces in code only render as one in the browser, etc).
+					</li>
+					<li>
+						<code>pre-wrap</code> – Spaces, tabs, and newlines will render out just as you typed them, but text will wrap naturally.
+					</li>
+				</ul>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					<code>@import</code> media types
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/@import" target="_blank">
+					More Info
+				</a>
+				<p>
+					<code>@import</code> is useful for linking to stylesheets from within another stylesheet (though you should combine them, when possible, to reduce the number of HTTP requests).  Now you can specify the type of media to use for these imported files, such as <code>print</code>.
+				</p>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					<code>:lang</code>
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/:lang" target="_blank">
+					More Info
+				</a>
+				<p>
+					Style elements based on the language you've set for that element or page via the <code>lang</code> attribute.  We could already do this with attribute selectors in IE7, but pseudo-classes are neat.
+				</p>
+			</article>
+			<article class="cat-better">
+				<h3>
+					Universal <code>z-index</code>
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/z-index" target="_blank">
+					More Info
+				</a>
+				<p>
+					In IE7 and below, elements basically had to be siblings to layer over one another.  If you had a deeply-nested element that needed to layer over the whole page (like, say, a modal box), you may have been out of luck – and out of hair a couple hours of rewriting later.  In IE8, that is no longer an issue.  All those years of training and precaution, now irrelevant!  I am so happy. :.)
+				</p>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					More <code>list-type-style</code> Values
+				</h3>
+				<a href="http://www.quirksmode.org/css/lists.html" target="_blank">
+					More Info
+				</a>
+				<p>
+					Some new styles on your lists.  I like the "leading zeroes" one quite a bit.
+				</p>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					Greater <code>@page</code> Support
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/@page" target="_blank">
+					More Info
+				</a>
+				<p>
+					Change the margins and other traits of specific pages in the printed version of your app with the <code>:first</code>, <code>:left</code>, <code>:right</code> pseudo-classes.
+				</p>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					<code>for</code> Attribute Selector
+				</h3>
+				<a href="https://developer.mozilla.org/en/CSS/Attribute_selectors" target="_blank">
+					More Info
+				</a>
+				<p>
+					IE7 possessed a bug, in which attribute selectors didn't work with <code>[for]</code>.  It's great that this is fixed in IE8, as it offers us the ability to style individual <code>&lt;label&gt;</code> elements without tawdry, superfluous <code>class</code> attributes.
+				</p>
+			</article>
+			<h2 id="features-js">
+				JavaScript
+			</h2>
+			<article class="cat-new">
+				<h3>
+					online / offline events & navigator.onLine
+				</h3>
+				<a href="https://developer.mozilla.org/en/Online_and_offline_events" target="_blank">
+					More Info
+				</a>
+				<p>
+					Unfortunately, the <code>online</code> and <code>offline</code> events are useless in IE and Firefox, as they only fire when the user explicitly selects <b>File > Work Offline</b>.  It seems to me that this isn't what developers want or expect, and I've <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=756364">notified Mozilla to as much</a> (as per usual, there's push-back, so please comment and lend your support).  In any case, it's too late for IE8 (and 9 and 10).
+				</p>
+				<p>
+					However, there is a bright side, and it's called WebKit:
+				</p>
+				<ol>
+					<li>
+						These events work as expected in WebKit.  That means that you can use them pretty reliably on mobile, where they are the most useful.
+					</li>
+					<li>
+						<code>navigator.onLine</code> works as expected, again, in WebKit.  That is, it returns <code>true</code> if the user can access your data, and <code>false</code> if they can't.  Which is neat.  Think about checking this value immediately when the user interacts with your app in a way that requires data, instead of waiting for an XHR (Ajax call) to fail first.  If it returns <code>false</code>, save all important data using <code>localStorage</code> (see below), maybe create a deeplink on the hash (again, see below – the <code>hashchange</code> event) so the user can return later.  Finally, throw up a friendly message asking them to try again when they have network access.  Of course, because other browsers barf on this feature as well, you should also do that when the XHR fails, although it won't be as responsive.  Until our beloved WebKit monoculture reigns supreme, with an iron fist!  And a titanium leg!  And lasers!
+					</li>
+				</ol>
+				<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/brianblakely/LxxhY/embedded/result,html,css,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+			</article>
+			<article class="cat-better">
+				<h3>
+					Native JSON
+				</h3>
+				<a href="https://developer.mozilla.org/En/Using_native_JSON" target="_blank">
+					More Info
+				</a>
+				<p>
+					While I would wager that you were using a library for JSON, you might be pleased to know that working with it is infinitely faster and more secure in IE8.  Also, with the new APIs, working with JSON is so much more approachable than the janky <code>eval</code>-based way of doing things.
+				</p>
+			</article>
+			<article class="cat-better">
+				<h3>
+					querySelector / querySelectorAll
+				</h3>
+				<a href="https://developer.mozilla.org/en/DOM/document.querySelectorAll" target="_blank">
+					More Info
+				</a>
+				<p>
+					You've probably worked with jQuery before.  You know how you might do something like <code>$('div.foo')</code> to get all <code>&lt;div&gt;</code>s with <code>foo</code> as one of their classes.  <code>querySelectorAll</code> works almost identically – you can query elements based on a CSS selector.  It gives you a raw node list, just like <code>document.getElementsByTagName</code>, and works with every CSS selector that I've ever tried.  <code>querySelector</code> does nearly the same thing, except it only delivers the first element that matches the selector, which is probably faster.
+				</p>
+				<p>
+					One notable difference between <code>querySelector/All</code> and methods that begin with <code>getElementsBy</code> is that the latter returns a "live node list," meaning that the results stored in, for example, <code>var foo</code> will change automatically as the actual DOM changes.  <code>querySelector/All</code> is like taking a static snapshot of the current DOM that matches your selector.
+				</p>
+			</article>
+			<article class="cat-new">
+				<h3>
+					hashchange event
+				</h3>
+				<a href="https://developer.mozilla.org/en/DOM/window.onhashchange" target="_blank">
+					More Info
+				</a>
+				<p>
+					Fires whenever the hash (#) on the URL changes, be it by clicking a linking, setting <code>location.hash</code>, or the user changing it in the address bar themselves.  Right after the complete <a href="https://developer.mozilla.org/en/DOM/Manipulating_the_browser_history">History API</a>, this is the holy grail of one-page applications, as it allows you to modify your app in real-time, responding to clicks on hash links, without refreshing the entire page.  Combine that technique with WAI-ARIA (below) for a highly <em>accessible</em> experience.
+				</p>
+				<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/brianblakely/nf3cY/embedded/result,html,css,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+			</article>
+			<article class="cat-new">
+				<h3>
+					localStorage / sessionStorage
+				</h3>
+				<a href="http://www.webdirections.org/blog/webstorage-persistent-client-side-data-storage/" target="_blank">
+					More Info
+				</a>
+				<p>
+					Referred to collectively as "DOM Storage" or "webStorage," you can think of these guys as <em>kind of</em> like Cookies.  They allow you to store text data on the user's hard drive.  The data you save is accessible to any page on the <a href="https://developer.mozilla.org/en/Same_origin_policy_for_JavaScript">same origin</a>.  They're global objects under <code>window</code>, and they have three really simple methods:
+				</p>
+				<ul>
+					<li>
+						<code>setItem('name', 'value')</code>
+					</li>
+					<li>
+						<code>getItem('name')</code>
+					</li>
+					<li>
+						<code>removeItem('name')</code>
+					</li>
+				</ul>
+				<p>
+					So what is the difference between <code>sessionStorage</code> and <code>localStorage</code>?  <code>sessionStorage</code> data will be erased when the user closes the browser tab or window that they are working in.  By the same hand, it isn't available to other windows or tabs.  <code>localStorage</code> data, though, is fairly permanent.  It'll be around until you delete it, or the user does in their user agent's settings.
+				</p>
+				<p>
+					Finally, keep in mind that there is a storage limit of a couple MBs per origin.
+				</p>
+				<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/brianblakely/RMrVV/embedded/result,html,css,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+			</article>
+			<article class="cat-new">
+				<h3>
+					XDomainRequest
+				</h3>
+				<a href="http://msdn.microsoft.com/en-us/library/cc288060(v=vs.85).aspx" target="_blank">
+					More Info
+				</a>
+				<p>
+					This is Microsoft's version of <a href="https://developer.mozilla.org/en/http_access_control">CORS</a> used only in IE8 and 9 (IE10 supports the standard implementation).  It is an object that will allow you to perform cross-domain HTTP requests, in a similar fashion to <code>XMLHttpRequest</code>.  However, like standard CORS, it requires some minor work on the frontend and backend.  It has some restrictions that will be helpful to know if you run into a bug (see the "more info" link).
+				</p>
+			</article>
+			<article class="cat-new">
+				<h3>
+					postMessage
+				</h3>
+				<a href="https://developer.mozilla.org/en/DOM/window.postMessage" target="_blank">
+					More Info
+				</a>
+				<p>
+					Like <code>XDomainRequest</code>, this will allow two disparate origins to exchange data, but only if one is in the child of another by being either in an <code>&lt;iframe&gt;</code> or pop-up window.  The pages involved in the communication will both need some JavaScript to make this work, maintaining security.
+				</p>
+			</article>
+			<article class="cat-better">
+				<h3>
+					hasAttribute
+				</h3>
+				<a href="https://developer.mozilla.org/en/DOM/element.hasAttribute" target="_blank">
+					More Info
+				</a>
+				<p>
+					Does the element have the specified attribute?  You can find out with the ease and swagger of a <em>dolphin</em> when you use this method on any element, feeding it a string that corresponds to the attribute name.
+				</p>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					DOM Element Interfaces
+				</h3>
+				<a href="https://developer.mozilla.org/en/Gecko_DOM_Reference#HTML_interfaces" target="_blank">
+					More Info
+				</a>
+				<p>
+					Constructors for HTML elements.  These are really useful, because they allow you to add properties and methods to all elements of a certain type with <code>prototype</code>.  However, use caution – it's can be dangerous to extend these interfaces, as you may unintentionally conflict with 3rd-party libraries or the browser itself.  Always plan ahead!
+				</p>
+				<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/brianblakely/eKE9r/embedded/result,html,css,js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+			</article>
+			<article class="cat-better">
+				<h3>
+					Object.defineProperty
+				</h3>
+				<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank">
+					More Info
+				</a>
+				<p>
+					This method allows you to not only give an object a new property (which we could already do), but define how that property should behave when its value changes or is retrieved (among other things).  It's very cool stuff, but in IE8 you can only do it to DOM objects, whereas all JavaScript objects are supported in better browsers.  You can, of course, continue to merely set and get properties on pretty much anything in all browsers using <a href="http://www.quirksmode.org/js/associative.html">other techniques</a>.
+				</p>
+			</article>
+			<article class="cat-ok">
+				<h3>
+					JS Honorable Mentions
+				</h3>
+				<p>
+					There are a number of fundamental features that just <em>always work now</em>, and that's what makes them special.
+				</p>
+				<ul>
+					<li>
+						<code>element.attributes[]</code>
+						–
+						No longer includes weird internal attributes, only the ones that a developer has explicitly added to an element.
+					</li>
+					<li>
+						<code>getElementById</code>
+					</li>
+					<li>
+						<code>getAttribute</code> / <code>setAttribute</code>
+					</li>
+					<li>
+						<code>&lt;button&gt;</code>
+						–
+						The <code>value</code> will be submitted to a form, instead of the <code>innerHTML</code>.
+					</li>
+				</ul>
+			</article>
+			<h2 id="features-files">
+				Files
+			</h2>
+			<article class="cat-better">
+				<h3>
+					Data URIs
+				</h3>
+				<a href="http://msdn.microsoft.com/en-us/library/cc848897(v=vs.85).aspx" target="_blank">
+					More Info
+				</a>
+				<p>
+					By converting data into a URI, we can embed it directly into our code.  In IE8, it's somewhat limited, as we can only do this with images and CSS data, but nothing else (for well-meaning security reasons).  Newer/better browsers are more flexible.
+				</p>
+				<p>
+					This is so great for teeny tiny images, where our data size is so small that the HTTP requests would actually damage our load times more than the filesizes themselves.  Combine this technique with image sprites for <strong>maximum power</strong>.
+				</p>
+				<p>
+					Another notable use case is when you want to amalgamate all your assets into one HTML files, perhaps, when passing off a landing page to a third party, and you're afraid they will mess it up if there is any complexity involved whatsoever (you can tell that I really work in this industry).  Just turn your images into data URIs, smack that into your <code>&lt;style&gt;</code> content or <code>&lt;img&gt;</code>, and away you go!
+				</p>
+			</article>
+			<article class="cat-nice">
+				<h3>
+					6 Concurrent Connections
+				</h3>
+				<p>
+					IE8 can now download up to 6 things at one time (IE7 only had 2 concurrent connections).  If you're optimizing performance on this browser, this fact is likely something to keep in mind.
+				</p>
+			</article>
+			<article class="cat-ok">
+				<h3>
+					Downloads Over 4GB
+				</h3>
+				<p>
+					I never tried this, and if you are, I might recommend leveraging <a href="http://torrentfreak.com/how-to-create-a-torrent/">BitTorrent</a>.
+				</p>
+			</article>
+		</section>
+		<aside>
+			<h2>
+				Fun Tidbits
+			</h2>
+			<article>
+				<h3>
+					IE8 will rarely destroy your site!
+				</h3>
+				<p>
+					Possibly the biggest update in IE8 is greater sanity.  Thankfully, there is a metric for sanity, and it's called <a href="http://acid3.acidtests.org/">The Acid3 Test</a>.  Below are screenshots of Acid3 in IE7, IE8, and Chrome.
+				</p>
+				<figure>
+					<figcaption>
+						IE7
+					</figcaption>
+					<img src="images/test_acid3_ie7.png" alt="Internet Explorer 7 (IE7) Acid3 Test Results" />
+				</figure>
+				<figure>
+					<figcaption>
+						IE8
+					</figcaption>
+					<img src="images/test_acid3_ie8.png" alt="Internet Explorer 8 (IE8) Acid3 Test Results" />
+				</figure>
+				<figure>
+					<figcaption>
+						Reference Rendering (Chrome)
+					</figcaption>
+					<img src="images/test_acid3_chr.png" alt="Chrome Acid3 Test Results" />
+				</figure>
+				<p>
+					IE7 looks like some kind of forest animal on Inside-Out Day.  IE8 is sane-but-bland, while Chrome is our control rendering, and doing so with glorious poise, like any good browser should.
+				</p>
+				<p>
+					These results are true to what you will likely experience in the field.  Things will go haywire far less often in IE8, but you can't <em>do</em> much more either.
+				</p>
+			</article>
+			<article>
+				<h3>
+					A friendlier user zoom…
+				</h3>
+				<p>
+					Certain tweaks were made to IE8 in order to prevent its zoom from utterly destroying page rendering.  It isn't bulletproof, but it isn't <em>magnetic</em> like IE7's bug-ridden zoom.
+				</p>
+			</article>
+		</aside>
+
+		<small>
+			Shut up and dance
+		</small>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>
